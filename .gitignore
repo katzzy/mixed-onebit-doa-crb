@@ -1,0 +1,16 @@
+recognition/dataset/
+recognition/outputs/
+recognition/nobit/
+recognition/Data/
+recognition/onebit/
+recognition/results/
+recognition/recovery/
+onebit_l.txt
+onebit_h.txt
+recovery_l.txt
+recovery_h.txt
+nobit_l.txt
+nobit_h.txt
+test/
+f_result/
+AR/
