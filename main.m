@@ -244,17 +244,17 @@ for i = 1:length(D_values)
     rmae_results(1, i) = rmae_results(1, i)/R;
 end
 
-
+real_D = M1_values + M2_values;
 % Drawing
 figure(1);
 set(gcf, 'Position', [100, 100, 800, 600]);
 hold on;
 
-plot(D_values, rmae_all_quan, 'k--', 'LineWidth', 2, 'DisplayName', '1 bit for all');
+plot(real_D, rmae_all_quan, 'k--', 'LineWidth', 2, 'DisplayName', '1 bit for all');
 
-plot(D_values, rmae_results, 'r-', 'LineWidth', 2, 'DisplayName', '1 bit for 1 sensors');
+plot(real_D, rmae_results, 'r-', 'LineWidth', 2, 'DisplayName', '1 bit for 1 sensors');
 
-plot(D_values, rmae_no_quan, 'y-.', 'LineWidth', 2, 'DisplayName', 'full-precision for all');
+plot(real_D, rmae_no_quan, 'y-.', 'LineWidth', 2, 'DisplayName', 'full-precision for all');
 
 
 xlabel('Sensors');
