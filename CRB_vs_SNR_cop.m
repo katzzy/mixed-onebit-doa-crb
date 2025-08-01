@@ -68,11 +68,11 @@ figure('Position', [100, 100, 1200, 800]);  % Adjust figure size here
 hold on;
 semilogy(SNR, crbx(1,:), '-s', repmat(SNR', 1, M-1), crbx(2:M,:)', SNR, crbx(M+1,:), '-d'), grid on
 xlim([SNR(1), SNR(end)]);
-set(gca, 'XTick', SNR);
-legend(['1bit for all'; cellstr(num2str([M-1:-1:1]', '1bit for %02d sensors')); ' full-precision quantization'], 'FontSize', 14)
-ylabel('$\sqrt {CRB} (^\circ)$', 'Interpreter', 'latex', 'FontSize', 16)
-xlabel('SNR(dB)', 'FontSize', 16)
-title(num2str([M, N, K], 'Array sensors: %d, snapshots: %d, sources: %d'), 'FontSize', 18);
+set(gca, 'XTick', SNR, 'FontSize', 24);
+legend(['1bit for all'; cellstr(num2str([M-1:-1:1]', '1bit for %02d sensors')); ' full-precision quantization'], 'FontSize', 22)
+ylabel('$\sqrt {CRB} (^\circ)$', 'Interpreter', 'latex', 'FontSize', 28)
+xlabel('SNR(dB)', 'FontSize', 28)
+title(num2str([M, N, K], 'Array sensors: %d, snapshots: %d, sources: %d'), 'FontSize', 30);
 hold off;
 f = gcf;
 exportgraphics(f, "CRB_COP.pdf", "ContentType","vector")

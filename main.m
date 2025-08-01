@@ -24,7 +24,7 @@ switch type
         exp_SNR_analyze(M1, M2, k, N, SNR, theta, D, non_quan_bits_list, R);
     case 2
         disp("music N")
-        N_values = [50 100 150 200 250 300 500];
+        N_values = [50 100 150 200 250 300 350 400 450 500];
         exp_N_analyze(M1, M2, k, N_values, snr, theta, D, non_quan_bits_list, R);
     case 3
         disp("music sensors")
@@ -113,13 +113,13 @@ end
 % Draw the full-precision quantization baseline
 plot(SNR, rmae_no_quan, 'y-.', 'LineWidth', 2, 'DisplayName', 'full-precision for all');
 
-xlabel('SNR(dB)');
-ylabel('RMSE (^\circ)');
-legend('Location', 'best');
+xlabel('SNR(dB)','FontSize', 20);
+ylabel('RMSE (^\circ)', 'FontSize', 20);
+legend('Location', 'best', 'FontSize', 14);
 grid on;
-title(num2str([M1 + M2, N, k], 'Array sensors: %d, snapshots: %d, sources: %d'));
+title(num2str([M1 + M2, N, k], 'Array sensors: %d, snapshots: %d, sources: %d'), 'FontSize', 20);
 hold off;
-
+set(gca, 'FontSize', 20);
 f = gcf;
 exportgraphics(f, "SNR_comparison.pdf", "ContentType","vector")
 
@@ -192,14 +192,14 @@ end
 
 % Draw the full-precision quantization baseline
 plot(N_values, rmae_no_quan, 'y-.', 'LineWidth', 2, 'DisplayName', 'full-precision for all');
-
-xlabel('Snapshots');
-ylabel('RMSE (^\circ)');
-legend('Location', 'best');
+xlabel('Snapshots', 'FontSize', 20);
+ylabel('RMSE (^\circ)', 'FontSize', 20);
+legend('Location', 'best', 'FontSize', 14);
+set(gca, 'XTick', N_values, 'FontSize', 20);
+xlim([min(N_values) max(N_values)]);
 grid on;
-title(num2str([M1 + M2, snr, k], 'Array sensors: %d, SNR: %d, sources: %d'));
+title(num2str([M1 + M2, snr, k], 'Array sensors: %d, SNR: %d, sources: %d'), 'FontSize', 20);
 hold off;
-
 f = gcf;
 exportgraphics(f, "snapshot_comparison.pdf", "ContentType","vector")
 end
@@ -257,13 +257,13 @@ plot(real_D, rmae_results, 'r-', 'LineWidth', 2, 'DisplayName', '1 bit for 1 sen
 plot(real_D, rmae_no_quan, 'y-.', 'LineWidth', 2, 'DisplayName', 'full-precision for all');
 
 
-xlabel('Sensors');
-ylabel('RMSE (^\circ)');
-legend('Location', 'best');
+xlabel('Sensors', 'FontSize', 20);
+ylabel('RMSE (^\circ)', 'FontSize', 20);
+legend('Location', 'best', 'FontSize', 14);
+set(gca, 'FontSize', 20);
 grid on;
-title(num2str([snr, N, k], 'SNR: %d, snapshots: %d, sources: %d'));
+title(num2str([snr, N, k], 'SNR: %d, snapshots: %d, sources: %d'), 'FontSize', 20);
 hold off;
-
 f = gcf;
 exportgraphics(f, "elements_comparison.pdf", "ContentType","vector")
 end
@@ -332,11 +332,13 @@ end
 
 plot(angle_set_values, rmae_no_quan, 'y-.', 'LineWidth', 2, 'DisplayName', 'full-precision for all');
 
-xlabel('Incident Signal Angle (^\circ)');
-ylabel('RMSE (^\circ)');
-legend('Location', 'north');
+xlabel('Incident Signal Angle (^\circ)', 'FontSize', 20);
+ylabel('RMSE (^\circ)', 'FontSize', 20);
+legend('Location', 'southeast', 'FontSize', 12);
+set(gca, 'FontSize', 20);
+ylim([0 1.2]);
 grid on;
-title(num2str([M1 + M2, snr,N, k], 'Array sensors: %d, SNR: %d, snapshots: %d, sources: %d'));
+title(num2str([M1 + M2, snr,N, k], 'Array sensors: %d, SNR: %d, snapshots: %d, sources: %d'), 'FontSize', 20);
 hold off;
 
 f = gcf;
@@ -420,11 +422,12 @@ end
 % Draw the full-precision quantization baseline
 plot(angle_set_number, rmae_no_quan, 'y-.', 'LineWidth', 2, 'DisplayName', 'full-precision for all');
 
-xlabel('Angle Number');
-ylabel('RMSE (^\circ)');
-legend('Location', 'northwest');
+xlabel('Angle Number', 'FontSize', 20);
+ylabel('RMSE (^\circ)', 'FontSize', 20);
+legend('Location', 'northwest', 'FontSize', 14);
+set(gca, 'FontSize', 20);
 grid on;
-title(num2str([M1 + M2, snr, N], 'Array sensors: %d, SNR: %d, snapshots: %d'));
+title(num2str([M1 + M2, snr, N], 'Array sensors: %d, SNR: %d, snapshots: %d'), 'FontSize', 20);
 hold off;
 
 f = gcf;

@@ -2,7 +2,7 @@ function [angle] = music_experiment(M1, M2, k, N, snr, angle_set, D, type, non_q
 
 angle_pi = angle_set./180.*pi;
 
-x = xcreate(M1,M2,k,N,snr,angle_pi); % 生成数据y
+x = xcreate(M1,M2,k,N,snr,angle_pi);
 
 if type == "mix quan"
     y_mix_quan = quan(x, N, non_quan_bits,"mix quan");

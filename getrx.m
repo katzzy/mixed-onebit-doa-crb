@@ -26,7 +26,7 @@ elseif type == "all quan"
 elseif type == "no quan"
     Rx = Ry;
 else
-    error("错误的量化类型");
+    error("Incorrect quantization type!");
 end
 if is_nested
     % Calculate the rx of the virtual array element

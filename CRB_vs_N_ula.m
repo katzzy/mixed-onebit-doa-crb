@@ -59,11 +59,11 @@ end
 plot(N_values, crbx(M+1,:), '-d', 'LineWidth', 1.5);
 grid on;
 xlim([N_values(1), N_values(end)]);
-set(gca, 'XTick', N_values);
-legend(['1bit for all'; cellstr(num2str([M-1:-1:1]', '1bit for %02d sensors')); ' full-precision quantization'], 'FontSize', 14)
-ylabel('$\sqrt {CRB} (^\circ)$', 'Interpreter', 'latex', 'FontSize', 16)
-xlabel('Snapshots', 'FontSize', 16)
-title(num2str([M, K, SNR], 'Array sensors: %d, sources: %d, SNR: %d dB'), 'FontSize', 18);
+set(gca, 'XTick', N_values, 'FontSize', 24);
+legend(['1bit for all'; cellstr(num2str([M-1:-1:1]', '1bit for %02d sensors')); ' full-precision quantization'], 'FontSize', 22)
+ylabel('$\sqrt {CRB} (^\circ)$', 'Interpreter', 'latex', 'FontSize', 28)
+xlabel('Snapshots', 'FontSize', 28)
+title(num2str([M, K, SNR], 'Array sensors: %d, sources: %d, SNR: %d dB'), 'FontSize', 30);
 hold off;
 f = gcf;
 exportgraphics(f, "CRB_vs_N_ULA.pdf", "ContentType","vector")
